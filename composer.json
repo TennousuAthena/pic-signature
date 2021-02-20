@@ -4,6 +4,7 @@
         "ua-parser/uap-php": "^3.9",
       "ext-curl": "*",
       "ext-imagick": "*",
-        "bramus/router": "~1.5"
+        "bramus/router": "~1.5",
+      "ext-json": "*"
     }
 }
