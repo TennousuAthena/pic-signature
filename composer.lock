@@ -1,0 +1,260 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "432b8c0c0348cfaba695209643b24db2",
+    "packages": [
+        {
+            "name": "bramus/router",
+            "version": "1.5",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/bramus/router.git",
+                "reference": "6adc0182dc6b0ebc22fd10543f65a36de10d8c05"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/bramus/router/zipball/6adc0182dc6b0ebc22fd10543f65a36de10d8c05",
+                "reference": "6adc0182dc6b0ebc22fd10543f65a36de10d8c05",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "friendsofphp/php-cs-fixer": "~2.14",
+                "phpunit/php-code-coverage": "~2.0",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-0": {
+                    "Bramus": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Bram(us) Van Damme",
+                    "email": "bramus@bram.us",
+                    "homepage": "http://www.bram.us"
+                }
+            ],
+            "description": "A lightweight and simple object oriented PHP Router",
+            "homepage": "https://github.com/bramus/router",
+            "keywords": [
+                "router",
+                "routing"
+            ],
+            "support": {
+                "issues": "https://github.com/bramus/router/issues",
+                "source": "https://github.com/bramus/router/tree/1.5"
+            },
+            "time": "2020-10-26T09:50:48+00:00"
+        },
+        {
+            "name": "composer/ca-bundle",
+            "version": "1.2.9",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/composer/ca-bundle.git",
+                "reference": "78a0e288fdcebf92aa2318a8d3656168da6ac1a5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/composer/ca-bundle/zipball/78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
+                "reference": "78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
+                "shasum": ""
+            },
+            "require": {
+                "ext-openssl": "*",
+                "ext-pcre": "*",
+                "php": "^5.3.2 || ^7.0 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.55",
+                "psr/log": "^1.0",
+                "symfony/phpunit-bridge": "^4.2 || ^5",
+                "symfony/process": "^2.5 || ^3.0 || ^4.0 || ^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Composer\\CaBundle\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Jordi Boggiano",
+                    "email": "j.boggiano@seld.be",
+                    "homepage": "http://seld.be"
+                }
+            ],
+            "description": "Lets you find a path to the system CA bundle, and includes a fallback to the Mozilla CA bundle.",
+            "keywords": [
+                "cabundle",
+                "cacert",
+                "certificate",
+                "ssl",
+                "tls"
+            ],
+            "support": {
+                "irc": "irc://irc.freenode.org/composer",
+                "issues": "https://github.com/composer/ca-bundle/issues",
+                "source": "https://github.com/composer/ca-bundle/tree/1.2.9"
+            },
+            "funding": [
+                {
+                    "url": "https://packagist.com",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/composer",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/composer/composer",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2021-01-12T12:10:35+00:00"
+        },
+        {
+            "name": "lincanbin/php-pdo-mysql-class",
+            "version": "v2.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/lincanbin/PHP-PDO-MySQL-Class.git",
+                "reference": "7517d30ffc514a3c54217717b97721ab394fa87a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/lincanbin/PHP-PDO-MySQL-Class/zipball/7517d30ffc514a3c54217717b97721ab394fa87a",
+                "reference": "7517d30ffc514a3c54217717b97721ab394fa87a",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pdo": "*",
+                "ext-pdo_mysql": "*",
+                "php": ">=5.3.6"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "src/PDO.class.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "lincanbin",
+                    "email": "lincanbin@hotmail.com"
+                }
+            ],
+            "description": "A PHP MySQL PDO class similar to the Python MySQLdb, which supports iterator and parameter binding when using 'WHERE IN' statement.",
+            "keywords": [
+                "database",
+                "iterator",
+                "mysql",
+                "pdo"
+            ],
+            "support": {
+                "issues": "https://github.com/lincanbin/PHP-PDO-MySQL-Class/issues",
+                "source": "https://github.com/lincanbin/PHP-PDO-MySQL-Class/tree/v2.2"
+            },
+            "time": "2020-11-27T02:02:36+00:00"
+        },
+        {
+            "name": "ua-parser/uap-php",
+            "version": "v3.9.14",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/ua-parser/uap-php.git",
+                "reference": "b796c5ea5df588e65aeb4e2c6cce3811dec4fed6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/ua-parser/uap-php/zipball/b796c5ea5df588e65aeb4e2c6cce3811dec4fed6",
+                "reference": "b796c5ea5df588e65aeb4e2c6cce3811dec4fed6",
+                "shasum": ""
+            },
+            "require": {
+                "composer/ca-bundle": "^1.1",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "phpstan/phpstan": "^0.12.33",
+                "phpunit/phpunit": "^8 || ^9",
+                "symfony/console": "^3.4 || ^4.2 || ^4.3 || ^5.0",
+                "symfony/filesystem": "^3.4 || ^4.2 ||  ^4.3 || ^5.0",
+                "symfony/finder": "^3.4 || ^4.2 || ^4.3 || ^5.0",
+                "symfony/yaml": "^3.4 || ^4.2 || ^4.3 || ^5.0",
+                "vimeo/psalm": "^3.12"
+            },
+            "suggest": {
+                "symfony/console": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0",
+                "symfony/filesystem": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0",
+                "symfony/finder": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0",
+                "symfony/yaml": "Required for CLI usage - ^3.4 || ^4.3 || ^5.0"
+            },
+            "bin": [
+                "bin/uaparser"
+            ],
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "UAParser\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Dave Olsen",
+                    "email": "dmolsen@gmail.com"
+                },
+                {
+                    "name": "Lars Strojny",
+                    "email": "lars@strojny.net"
+                }
+            ],
+            "description": "A multi-language port of Browserscope's user agent parser.",
+            "support": {
+                "issues": "https://github.com/ua-parser/uap-php/issues",
+                "source": "https://github.com/ua-parser/uap-php/tree/v3.9.14"
+            },
+            "time": "2020-10-02T23:36:20+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "ext-curl": "*",
+        "ext-imagick": "*"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
+}
