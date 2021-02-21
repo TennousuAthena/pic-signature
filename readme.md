@@ -1,10 +1,12 @@
 # pic-signature ——优雅的图片签名档（也许
+## 使用
 TBD……
 
 ## 鸣谢
 ### API
 
-[苍穹精华 API](https://api.xhboke.com/doc/)
+- [苍穹精华 API](https://api.xhboke.com/doc/)
+- [一言 Hitokoto](https://hitokoto.cn/)
 
 ### 字体
 - [975 圆体](https://github.com/lxgw/975maru)
