@@ -12,10 +12,10 @@ $router = new \Bramus\Router\Router();
 
 $router->get('/i/(\w+)', function($pid) {
     global $CONF;
-    include "controller/showImg.php";
     if($CONF['GA']['tid'] != "") {
         $ga = new pics\mlc\GA($CONF['GA']['tid']);
     }
+    include "controller/showImg.php";
 });
 
 $router->get('/docs/(\w+)', function($file) {
