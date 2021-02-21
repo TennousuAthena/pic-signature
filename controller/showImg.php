@@ -17,5 +17,7 @@ $I->drawText("WOW! It works! From ".$uInfo['ip']."\n 你好啊！来自".
     ."，气温".$uInfo['city']['temperature']."°C\n「" . $hitokoto['hitokoto'] . "」"
     , 250, 85, 22, "XiaolaiSC-Regular.ttf", "pink", 2);
 $I->drawText("Powered by pic-signature", 500, 220, 14, "975MaruSC-Regular.ttf", "#349e69", 3);
+define("END", time_float());
+$I->drawText("Processed in " . (END - START) . "s", 500, 20, 10, "975MaruSC-Regular.ttf", "grey", 3);
 
 $I->show();
