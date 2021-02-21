@@ -10,7 +10,7 @@ $I->drawText(":)", 0, 50, 65, "zpix.ttf", "#9565b1");
 $I->drawText("WOW! It works! From ".$uInfo['ip']."\n 你好啊！来自".
     $uInfo['site']['country'].$uInfo['site']['region']."的朋友~\n当前天气".$uInfo['city']['weather']
     ."，气温".$uInfo['city']['temperature']."°C\n「" . $hitokoto['hitokoto'] . "」"
-    , 0, 85, 22, "XiaolaiSC-Regular.ttf", "pink");
+    , 250, 85, 22, "XiaolaiSC-Regular.ttf", "pink", 2);
 $I->drawText("Powered by pic-signature", 500, 190, 14, "975MaruSC-Regular.ttf", "#349e69", 3);
 
 $I->show();
