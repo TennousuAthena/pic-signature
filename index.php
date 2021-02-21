@@ -6,13 +6,13 @@ if(!extension_loaded("imagick")){
 use UAParser\Parser;
 require_once 'function.php';
 require_once 'vendor/autoload.php';
-require_once 'gaClass.php';
+require_once 'class/manually_load.php';
 $CONF = require_once 'config.php';
 $router = new \Bramus\Router\Router();
 
 
 if($CONF['GA']['tid'] != "") {
-    $ga = new GA($CONF['GA']['tid']);
+    $ga = new pics\mlc\GA($CONF['GA']['tid']);
 }
 
 $router->get('/i/(\w+)', function($pid) {

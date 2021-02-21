@@ -1,5 +1,6 @@
 <?php
-function geturl($url){
+function jsonUrl($url): array
+{
     $headerArray = array("Content-type:application/json;", "Accept:application/json");
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_URL, $url);
@@ -21,4 +22,14 @@ function getIp(): string
     else if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], "unknown")) $ip = $_SERVER['REMOTE_ADDR'];
     else $ip = "0.1.2.3";
     return ($ip);
+}
+
+function viewerInfo(): array
+{
+    $uip = getIp();
+    if ($uip == "::1"):
+        return jsonUrl("https://api.xhboke.com/ip/v1.php");
+    else:
+        return jsonUrl("https://api.xhboke.com/ip/v1.php?ip=".$uip);
+    endif;
 }

@@ -5,6 +5,8 @@
       "ext-curl": "*",
       "ext-imagick": "*",
         "bramus/router": "~1.5",
-      "ext-json": "*"
+      "ext-json": "*",
+      "ext-gd": "*",
+      "ext-simplexml": "*"
     }
 }
