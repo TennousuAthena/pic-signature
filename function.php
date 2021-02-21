@@ -1,4 +1,9 @@
 <?php
+
+use pics\mlc\log;
+
+set_exception_handler('picException');
+
 function jsonUrl($url): array
 {
     $headerArray = array("Content-type:application/json;", "Accept:application/json");
@@ -32,4 +37,20 @@ function viewerInfo(): array
     else:
         return jsonUrl("https://api.xhboke.com/ip/v1.php?ip=".$uip);
     endif;
+}
+
+function picException($ex){
+    $errMsg = "异常 : " . $ex->getMessage() . " on Line ".
+    $ex->getLine() . "\n in ". $ex->getFile();
+    log::newLog($errMsg, "Error");
+
+    $errorXML = file_get_contents(SYS_PATH."/assets/error.xml");
+    try {
+        $I = new pics\mlc\Interpreter($errorXML);
+        $I->drawText(":(", 0, 50, 65, "zpix.ttf", "red");
+        $I->drawText($errMsg, 0, 85, 14, "HanaMinA.ttf", "red");
+    } catch (Exception $e) {
+        exit("Fatal Error!!");
+    }
+    $I->show();
 }

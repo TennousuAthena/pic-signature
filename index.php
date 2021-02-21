@@ -10,13 +10,12 @@ require_once 'class/manually_load.php';
 $CONF = require_once 'config.php';
 $router = new \Bramus\Router\Router();
 
-
-if($CONF['GA']['tid'] != "") {
-    $ga = new pics\mlc\GA($CONF['GA']['tid']);
-}
-
 $router->get('/i/(\w+)', function($pid) {
-    echo include "controller/showImg.php";
+    global $CONF;
+    include "controller/showImg.php";
+    if($CONF['GA']['tid'] != "") {
+        $ga = new pics\mlc\GA($CONF['GA']['tid']);
+    }
 });
 
 $router->get('/docs/(\w+)', function($file) {

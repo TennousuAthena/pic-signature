@@ -13,7 +13,7 @@ class GA{
     /**
      * @var string UUID
      */
-    private $uuid = "";
+    private $uuid;
 
     public function __construct(string $tid, array $exQuery = []){
         if($tid){
@@ -30,13 +30,11 @@ class GA{
 
     private function create_uuid(): string
     {
-        $str = md5(uniqid(mt_rand(), true));
-        $uuid = substr($str,0,8) . '-';
-        $uuid .= substr($str,8,4) . '-';
-        $uuid .= substr($str,12,4) . '-';
-        $uuid .= substr($str,16,4) . '-';
-        $uuid .= substr($str,20,12);
-        return $uuid;
+        if (function_exists('com_create_guid') === true) {
+            return trim(com_create_guid(), '{}');
+        }
+
+        return sprintf('QC-%04X%04X-%04X-%04X-%04X-%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
     }
 
     public function send($exQuery = []){
