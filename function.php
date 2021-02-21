@@ -4,6 +4,11 @@ use pics\mlc\log;
 
 set_exception_handler('picException');
 
+/**
+ * Curl
+ * @param $url
+ * @return array json decode
+ */
 function jsonUrl($url): array
 {
     $headerArray = array("Content-type:application/json;", "Accept:application/json");
@@ -19,6 +24,9 @@ function jsonUrl($url): array
     return $output;
 }
 
+/**
+ * @return string
+ */
 function getIp(): string
 {
     if (getenv("HTTP_CLIENT_IP") && strcasecmp(getenv("HTTP_CLIENT_IP"), "unknown")) $ip = getenv("HTTP_CLIENT_IP");
@@ -29,16 +37,22 @@ function getIp(): string
     return ($ip);
 }
 
+/**
+ * @return array
+ */
 function viewerInfo(): array
 {
     $uip = getIp();
     if ($uip == "::1"):
-        return jsonUrl("https://api.xhboke.com/ip/v1.php");
+        return jsonUrl("https://api.xhboke.com/ip/v1.php?ip");
     else:
         return jsonUrl("https://api.xhboke.com/ip/v1.php?ip=".$uip);
     endif;
 }
 
+/**
+ * @param $ex
+ */
 function picException($ex){
     $errMsg = "异常 : " . $ex->getMessage() . " on Line ".
     $ex->getLine() . "\n in ". $ex->getFile();
