@@ -1,6 +1,5 @@
 {
     "require": {
-        "lincanbin/php-pdo-mysql-class": "^2.2",
         "ua-parser/uap-php": "^3.9",
       "ext-curl": "*",
       "ext-imagick": "*",
