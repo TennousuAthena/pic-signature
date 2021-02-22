@@ -1,8 +1,20 @@
 # pic-signature ——优雅的图片签名档（也许
 ## 使用
+### 环境要求
+- Apache/Nginx
+- PHP v7.3,7.4（暂未在其他版本测试）
+    - php-gd
+    - php-curl
+    - php-imagick
+- Composer （可选）
+
 TBD……
 
 ## 鸣谢
+### 类库
+- [uap-php](https://github.com/ua-parser/uap-php)
+- [bramus/router](https://github.com/bramus/router)
+
 ### API
 
 - [苍穹精华 API](https://api.xhboke.com/doc/)
