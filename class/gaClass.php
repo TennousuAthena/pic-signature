@@ -19,22 +19,25 @@ class GA{
         if($tid){
             $this->tid = $tid;
         }
-        if (!isset($_COOKIE["uuid"])) {
-            $this->uuid=$this->create_uuid();
-            setcookie("uuid", $this->uuid, time()+368400000);
-        }else{
+        if (isset($_COOKIE["uuid"])) {
             $this->uuid=$_COOKIE["uuid"];
         }
         $this->send($exQuery);
     }
 
-    private function create_uuid(): string
+    public static function set_cookie(){
+        if (!isset($_COOKIE["uuid"])) {
+            setcookie("uuid", self::create_uuid(), time() + 368400000);
+        }
+    }
+
+    private static function create_uuid(): string
     {
         if (function_exists('com_create_guid') === true) {
             return trim(com_create_guid(), '{}');
         }
 
-        return sprintf('QC-%04X%04X-%04X-%04X-%04X-%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
+        return sprintf('%04X%04X-%04X-%04X-%04X-%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
     }
 
     public function send($exQuery = []){
