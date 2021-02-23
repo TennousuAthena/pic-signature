@@ -51,11 +51,13 @@ function viewerInfo(): array
 }
 
 /**
+ * Exception Handler
  * @param $ex
  */
 function picException($ex){
+    $safe_file = str_replace(SYS_PATH, "", $ex->getFile());
     $errMsg = "异常 : " . $ex->getMessage() . " on Line ".
-    $ex->getLine() . "\n in ". $ex->getFile();
+    $ex->getLine() . "\n in pic-signature". $safe_file;
     log::newLog($errMsg, "Error");
 
     $errorXML = file_get_contents(SYS_PATH."/assets/error.xml");
