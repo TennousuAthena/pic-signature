@@ -65,7 +65,7 @@ class GA{
         if ($exQuery !== []){
             $query = array_merge($query, $exQuery);
         }
-        $url='https://www.google-analytics.com/debug/collect?'.http_build_query($query);
+        $url='https://www.google-analytics.com/collect?'.http_build_query($query);
         $ch=curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
