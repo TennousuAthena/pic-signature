@@ -77,4 +77,5 @@ function time_float():float
     list($usec, $sec) = explode(" ", microtime());
     return ((float)$usec + (float)$sec);
 }
-define("START", time_float());
+define("TIME_START", time_float());
+define("MEM_START", memory_get_usage());
