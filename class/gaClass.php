@@ -41,6 +41,7 @@ class GA{
     }
 
     public function send($exQuery = []){
+        //DOC: https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters
         $ref = @$_SERVER["HTTP_REFERER"];
         $url = ((isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https')) ? 'https://' : 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
         $ul = @$_SERVER['HTTP_ACCEPT_LANGUAGE'];
@@ -49,17 +50,18 @@ class GA{
         if ($uip === "::1"){
             $uip = viewerInfo()['ip'];
         }
+        $dl = $ref? $ref : $url;
         $query = [
             "v"  => 1,
             "a"  => time(),
             "t"  => "pageview",
-            "dl" => $ref? $ref : $url,
+            "dl" => $dl,
             "cid"=> $this->uuid,
             "tid"=> $this->tid,
             "uip"=> $uip,
             "ua" => @$_SERVER['HTTP_USER_AGENT'],
-            "ul" => $ul
-
+            "ul" => $ul,
+            "dr" => parse_url($dl)['host']
         ];
         $headers[] = @$_SERVER['HTTP_USER_AGENT'];
         if ($exQuery !== []){
@@ -71,7 +73,9 @@ class GA{
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
         curl_exec($ch);
+        $rcode = curl_getinfo($ch)['http_code'];
         curl_close($ch);
+        return $rcode;
     }
 
 }

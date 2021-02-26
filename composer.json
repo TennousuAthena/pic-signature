@@ -6,6 +6,7 @@
         "bramus/router": "~1.5",
       "ext-json": "*",
       "ext-gd": "*",
-      "ext-simplexml": "*"
+      "ext-simplexml": "*",
+        "zoujingli/ip2region": "^1.0"
     }
 }

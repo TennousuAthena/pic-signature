@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <root>
     <basicInfo>
-        <bgColor>white</bgColor>
-        <format>JPEG</format>
+        <bgColor>transparent</bgColor>
+        <format>PNG</format>
         <height>230</height>
         <width>500</width>
     </basicInfo>
