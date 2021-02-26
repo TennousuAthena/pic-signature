@@ -1,4 +1,10 @@
 # pic-signature ——优雅的图片签名档（也许
+
+## Preview
+![image.png](https://p.qmcmc.cn/i/1)
+
+（Partly available on Github，try [mirror](https://git.qmcmc.cn/qctech/pic-signature) in China）
+
 ## 使用
 ### 环境要求
 - Apache/Nginx
