@@ -9,28 +9,47 @@ class GA{
     /**
      * @var string Google 统计ID
      */
-    public $tid = "";
+    public string $tid = "";
     /**
      * @var string UUID
      */
     private $uuid;
 
-    public function __construct(string $tid, array $exQuery = []){
+    /**
+     * @var string 后端请求地址
+     */
+    public string $ga_url = "https://www.google-analytics.com/";
+
+    /**
+     * GA constructor.
+     * @param string $tid
+     * @param array $exQuery
+     * @param string $ga
+     */
+    public function __construct(string $tid, array $exQuery = [], string $ga=""){
         if($tid){
             $this->tid = $tid;
         }
         if (isset($_COOKIE["uuid"])) {
             $this->uuid=$_COOKIE["uuid"];
         }
+        $this->ga_url = !$ga? $this->ga_url : $ga;
         $this->send($exQuery);
     }
 
+    /**
+     * 设置Cookie
+     */
     public static function set_cookie(){
         if (!isset($_COOKIE["uuid"])) {
             setcookie("uuid", self::create_uuid(), time() + 368400000);
         }
     }
 
+    /**
+     * 生成UUID
+     * @return string
+     */
     private static function create_uuid(): string
     {
         if (function_exists('com_create_guid') === true) {
@@ -40,6 +59,11 @@ class GA{
         return sprintf('%04X%04X-%04X-%04X-%04X-%04X%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(16384, 20479), mt_rand(32768, 49151), mt_rand(0, 65535), mt_rand(0, 65535), mt_rand(0, 65535));
     }
 
+    /**
+     * 发送GA
+     * @param array $exQuery
+     * @return mixed
+     */
     public function send($exQuery = []){
         //DOC: https://developers.google.com/analytics/devguides/collection/protocol/v1/parameters
         $ref = @$_SERVER["HTTP_REFERER"];
@@ -67,7 +91,7 @@ class GA{
         if ($exQuery !== []){
             $query = array_merge($query, $exQuery);
         }
-        $url='https://www.google-analytics.com/collect?'.http_build_query($query);
+        $url=$this->ga_url . '/collect?'.http_build_query($query);
         $ch=curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);

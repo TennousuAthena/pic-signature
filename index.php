@@ -4,20 +4,21 @@ if(!extension_loaded("imagick")){
 }
 
 use pics\mlc\GA;
-use UAParser\Parser;
+
+$CONF = require_once 'config.php';
 require_once 'function.php';
 require_once 'vendor/autoload.php';
 require_once 'class/manually_load.php';
-$CONF = require_once 'config.php';
 $router = new \Bramus\Router\Router();
 
 $router->get('/i/(\w+)', function($pid) {
     GA::set_cookie();
     global $CONF;
+
     include "controller/showImg.php";
 
     if($CONF['GA']['tid'] != "") {
-        $ga = new pics\mlc\GA($CONF['GA']['tid']);
+        $ga = new pics\mlc\GA($CONF['GA']['tid'], [], $CONF['GA']['PROXY_API_ADDR']);
     }
 });
 

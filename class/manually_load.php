@@ -6,3 +6,4 @@
 require_once "gaClass.php";
 require_once "interpreterClass.php";
 require_once "logClass.php";
+require_once "db.php";
