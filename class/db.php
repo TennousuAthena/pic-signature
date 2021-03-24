@@ -1,6 +1,5 @@
 <?php
 namespace pics\mlc;
-use mysql_xdevapi\Exception;
 use SQLite3;
 
 class DB extends SQLite3
@@ -32,7 +31,7 @@ class DB extends SQLite3
             throw new Exception("数据写入错误");
         }
         if(!$db){
-            throw new \Exception($this->db->lastErrorMsg());
+            throw new Exception($this->db->lastErrorMsg());
         }else{
             return $db->lastInsertRowID();
         }
