@@ -6,11 +6,5 @@ return [
     "GA"=>[
         "PROXY_API_ADDR" => "", //GA镜像URL，不知道是什么请留空
         "tid" => "UA-114514-1",
-    ],
-    "Database"=>[
-        "format" => "SQLite",
-        [
-            "Sqlite_DIR" => SYS_PATH."/assets/data/pic.db",
-        ]
     ]
 ];
