@@ -11,7 +11,14 @@ $ua = Parser::create()->parse($_SERVER['HTTP_USER_AGENT']);
 
 $hitokoto = $db->get();
 
-$uInfo = viewerInfo();
+if($_SESSION['uInfo'] == [] || time() - $_SESSION['time'] > 3600){
+    $_SESSION['time'] = time();
+    $uInfo = viewerInfo();
+    $_SESSION['uInfo'] = $uInfo;
+}else{
+    $uInfo = $_SESSION['uInfo'];
+}
+
 $I->drawText(":)", 0, 50, 65, "zpix.ttf", "#9565b1");
 $I->drawText("WOW! It works! From ".$uInfo['ip']."\n 你好啊！来自".
     $uInfo['site']['country'].$uInfo['site']['region']."的朋友~\n您正在"

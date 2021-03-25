@@ -5,6 +5,7 @@ if(!extension_loaded("imagick")){
 
 use pics\mlc\GA;
 
+session_start();
 $CONF = require_once 'config.php';
 require_once 'function.php';
 require_once 'vendor/autoload.php';
