@@ -18,7 +18,6 @@ class DB extends SQLite3
      * @param $content
      * @param $from
      * @return int
-     * @throws \Exception
      */
     public function insert($hid, $content, $from): int
     {

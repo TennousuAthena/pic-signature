@@ -11,7 +11,9 @@ $ua = Parser::create()->parse($_SERVER['HTTP_USER_AGENT']);
 
 $hitokoto = $db->get();
 
-if($_SESSION['uInfo'] == [] || time() - $_SESSION['time'] > 3600){
+$uinfo_flag = time() - $_SESSION['time'] > 3600;
+
+if($_SESSION['uInfo'] == []){
     $_SESSION['time'] = time();
     $uInfo = viewerInfo();
     $_SESSION['uInfo'] = $uInfo;
@@ -34,3 +36,7 @@ $I->show();
 
 $hitokoto = jsonUrl("https://v1.hitokoto.cn/?max_length=20&c=a&c=b&c=h&c=j");
 $db->insert($hitokoto['id'], $hitokoto['hitokoto'], $hitokoto['from']);
+if($uinfo_flag){
+    $_SESSION['time'] = time();
+    $_SESSION['uInfo'] = viewerInfo();
+}
