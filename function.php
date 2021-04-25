@@ -33,8 +33,11 @@ function getIp(): string
     else if (getenv("HTTP_X_FORWARDED_FOR") && strcasecmp(getenv("HTTP_X_FORWARDED_FOR"), "unknown")) $ip = getenv("HTTP_X_FORWARDED_FOR");
     else if (getenv("REMOTE_ADDR") && strcasecmp(getenv("REMOTE_ADDR"), "unknown")) $ip = getenv("REMOTE_ADDR");
     else if (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] && strcasecmp($_SERVER['REMOTE_ADDR'], "unknown")) $ip = $_SERVER['REMOTE_ADDR'];
-    else $ip = "0.1.2.3";
-    return ($ip);
+    else $ip = "0.0.0.0";
+
+    $arr=explode(",", $ip);
+    $last=$arr[0];
+    return trim($last);
 }
 
 /**
@@ -57,7 +60,7 @@ function viewerInfo(): array
 function picException($ex){
     $safe_file = str_replace(SYS_PATH, "", $ex->getFile());
     $errMsg = "异常 : " . $ex->getMessage() . " on Line ".
-    $ex->getLine() . "\n in pic-signature". $safe_file;
+        $ex->getLine() . "\n in pic-signature". $safe_file;
     log::newLog($errMsg, "Error");
 
     $errorXML = file_get_contents(SYS_PATH."/assets/error.xml");
