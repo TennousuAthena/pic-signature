@@ -7,7 +7,6 @@
       "ext-json": "*",
       "ext-gd": "*",
       "ext-simplexml": "*",
-        "zoujingli/ip2region": "^1.0",
       "ext-sqlite3": "*"
     }
 }

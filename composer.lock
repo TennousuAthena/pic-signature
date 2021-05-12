@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "70219bfe61307dc8fcc9bacb9dc59519",
+    "content-hash": "e8e6b0563a4a98164a2dc4624d089616",
     "packages": [
         {
             "name": "bramus/router",
@@ -18,7 +18,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/bramus/router/zipball/6adc0182dc6b0ebc22fd10543f65a36de10d8c05",
                 "reference": "6adc0182dc6b0ebc22fd10543f65a36de10d8c05",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "php": ">=5.3.0"
@@ -69,7 +75,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/composer/ca-bundle/zipball/78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
                 "reference": "78a0e288fdcebf92aa2318a8d3656168da6ac1a5",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "ext-openssl": "*",
@@ -145,7 +157,13 @@
                 "type": "zip",
                 "url": "https://api.github.com/repos/ua-parser/uap-php/zipball/b796c5ea5df588e65aeb4e2c6cce3811dec4fed6",
                 "reference": "b796c5ea5df588e65aeb4e2c6cce3811dec4fed6",
-                "shasum": ""
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
             },
             "require": {
                 "composer/ca-bundle": "^1.1",
@@ -195,51 +213,6 @@
                 "source": "https://github.com/ua-parser/uap-php/tree/v3.9.14"
             },
             "time": "2020-10-02T23:36:20+00:00"
-        },
-        {
-            "name": "zoujingli/ip2region",
-            "version": "v1.0.9",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/zoujingli/ip2region.git",
-                "reference": "e48f9122f50dd3b79295e35b4acdd0dcd2608ca8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/zoujingli/ip2region/zipball/e48f9122f50dd3b79295e35b4acdd0dcd2608ca8",
-                "reference": "e48f9122f50dd3b79295e35b4acdd0dcd2608ca8",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "Ip2Region.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "Apache-2.0"
-            ],
-            "authors": [
-                {
-                    "name": "Anyon",
-                    "email": "zoujingli@qq.com",
-                    "homepage": "http://ctolog.com"
-                }
-            ],
-            "description": "Ip2Region for PHP",
-            "homepage": "https://github.com/zoujingli/Ip2Region",
-            "keywords": [
-                "Ip2Region"
-            ],
-            "support": {
-                "issues": "https://github.com/zoujingli/ip2region/issues",
-                "source": "https://github.com/zoujingli/ip2region/tree/v1.0.9"
-            },
-            "time": "2020-11-06T07:21:55+00:00"
         }
     ],
     "packages-dev": [],
@@ -253,7 +226,8 @@
         "ext-imagick": "*",
         "ext-json": "*",
         "ext-gd": "*",
-        "ext-simplexml": "*"
+        "ext-simplexml": "*",
+        "ext-sqlite3": "*"
     },
     "platform-dev": [],
     "plugin-api-version": "2.0.0"
