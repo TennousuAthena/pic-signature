@@ -46,7 +46,7 @@ function getIp(): string
 function viewerInfo(): array
 {
     $uip = getIp();
-    if ($uip == "::1"):
+    if ($uip == "::1" || $uip == "127.0.0.1"):
         return jsonUrl("https://api.xhboke.com/ip/v1.php?ip");
     else:
         return jsonUrl("https://api.xhboke.com/ip/v1.php?ip=".$uip);

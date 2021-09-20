@@ -3,6 +3,7 @@ if(!extension_loaded("imagick")){
     exit("Error: Imagick is required");
 }
 
+use Bramus\Router\Router;
 use pics\mlc\GA;
 
 session_start();
@@ -10,7 +11,7 @@ $CONF = require_once 'config.php';
 require_once 'function.php';
 require_once 'vendor/autoload.php';
 require_once 'class/manually_load.php';
-$router = new \Bramus\Router\Router();
+$router = new Router();
 
 $router->get('/i/(\w+)', function($pid) {
     GA::set_cookie();
@@ -25,6 +26,15 @@ $router->get('/i/(\w+)', function($pid) {
 
 $router->get('/docs/(\w+)', function($file) {
     $file = "doc/".$file.".html";
+    if(file_exists($file)){
+        echo file_get_contents($file);
+    }else{
+        echo file_get_contents("doc/404.html");
+    }
+});
+
+$router->get('/', function() {
+    $file = "doc/index.html";
     if(file_exists($file)){
         echo file_get_contents($file);
     }else{
